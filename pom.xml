@@ -79,6 +79,14 @@
 		</dependency>
 	</dependencies>
 
+	<distributionManagement>
+		<repository>
+			<id>devops</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/RafaelOMarins/https://github.com/RafaelOMarins/TarefasDevops.git</url>
+		</repository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
