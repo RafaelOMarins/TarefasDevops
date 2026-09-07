@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>devops.example</groupId>
-	<artifactId>GerenciadorDeTarefas</artifactId>
+	<artifactId>gerenciador-de-tarefas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>
