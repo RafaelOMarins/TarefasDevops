@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>devops.example</groupId>
-	<artifactId>GerenciadorDeTarefas</artifactId>
+	<artifactId>gerenciador-de-tarefas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>
@@ -67,7 +67,25 @@
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
+
+	<distributionManagement>
+		<repository>
+			<id>devops</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/RafaelOMarins/TarefasDevops</url>
+		</repository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
