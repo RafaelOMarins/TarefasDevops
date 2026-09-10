@@ -3,7 +3,7 @@ LABEL authors="rafas"
 
 WORKDIR /app
 
-COPY /target/gerenciador-de-tarefas-0.0.1-SNAPSHOT.jar /app
+COPY target/gerenciador-de-tarefas-0.0.1-SNAPSHOT.jar /app
 
 EXPOSE 8080
 
