@@ -2,15 +2,26 @@ services:
   mysql-devops:
     image: mysql:8.4
     ports:
-        - "3307:3306"
+      - "3307:3306"
     environment:
-        - MYSQL_ROOT_PASSWORD=9GS)2£k:l1U`
-        - MYSQL_DATABASE=devops
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: devops
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 15s
 
   gerenciador-tarefas:
     build: .
     ports:
       - "8080:8080"
     environment:
-      - MYSQL_ROOT_PASSWORD=9GS)2£k:l1U`
-      - MYSQL_DATABASE=devops
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-devops:3306/devops
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    depends_on:
+       mysql-devops:
+         condition: service_healthy
+         restart: true
